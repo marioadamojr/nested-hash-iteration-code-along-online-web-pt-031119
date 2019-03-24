@@ -19,7 +19,9 @@ def remove_strawberry(contacts)
     contact_details_hash.each do |attribute, data|
       if attribute == :favorite_ice_cream_flavors
         #binding.pry
-          attribute.delete_if(data) == "strawberry"
+          #first attempt, remember we're changing the data not the attribute. set up delete_if like its a each, collect, etc
+          #attribute.delete_if(data) == "strawberry"
+          data.delete_if {|ice_cream| ice_cream == "strawberry"}
       end
     end
   end
